@@ -1,0 +1,78 @@
+<div class="flex-column">
+    <div id="header-bar">
+        <button routerLink="/add">1) Add Listing</button>
+        <div class="title me-2">Classifieds</div>
+    </div>
+    <div class="container mt-2">
+        <div id="filters">
+            <div class="row">
+                <div class="col">
+                    <input placeholder="<Search>"/>
+                </div>
+                <div class="col">
+                    <select name="listings">
+                        <option value="All">All Listings</option>
+                        <option value="My">My Listings</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select name="categories">
+                        <option value="All">All Categories</option>
+                        <option value="RealEstate">Real Estate</option>
+                        <option value="Merchandise">Merchandise</option>
+                        <option value="Services">Services</option>
+                        <option value="AutomobilesMotorcycles">Automobiles/Motorcycles</option>
+                        <option value="AirplanesBoats">Airplanes/Boats</option>
+                        <option value="Travel">Travel</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select name="subcategories" disabled>
+                        <option value="All">All Subcategories</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col">
+                    <select name="regions">
+                        <option value="All">All Regions</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="US">United States</option>
+                        <option value="VN">Vietnam</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select name="locations" disabled>
+                        <option value="All">All Locations</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <table class="table table-sm mt-3">
+            <thead>
+              <tr>
+                <th style="width: 35px"></th>
+                <th style="width: 35px">Fav</th>
+                <th style="width: 65%">Title</th>
+                <th style="width: 10%">Price</th>
+                <th style="width: 10%">Location</th>
+                <th style="width: 10%">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let listing of listings">
+                    <td>{{listing.id}}</td>
+                    <td>
+                        <a class="star" (click)="star(listing)">{{listing.starred ? '★' : '☆' }}</a>
+                    </td>
+                    <td>{{listing.title}}</td>
+                    <td class="orange">{{listing.price}}</td>
+                    <td class="orange">{{listing.location}}</td>
+                    <td class="orange">{{formatDate(listing.date)}}</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

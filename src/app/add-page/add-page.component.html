@@ -1,0 +1,19 @@
+<div class="flex-column">
+    <div id="header-bar">
+        <div class="d-flex">
+            <button (click)="submit()">1) Submit</button>
+            <button routerLink="/">2) Listings</button>
+
+        </div>
+        <div class="title me-2">Classifieds: Add Listing</div>
+    </div>
+    <div class="container">
+        <div class="flex-column">
+            <input type="text" name="title" placeholder="Title" [(ngModel)]="title"/>
+            <input type="text" name="price" placeholder="Price" [(ngModel)]="price"/>
+            <input type="text" name="location" placeholder="Location" [(ngModel)]="location"/>
+            <input type="text" name="date" placeholder="Date" [(ngModel)]="date"/>
+            <input type="text" name="description" placeholder="Description" [(ngModel)]="description"/>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Bloomberg;
+    src: url(assets/Bloomberg.ttf) format("opentype");
+}
+
+body {
+    background-color: #000;
+    color: #fb8b1e;
+    font-family: 'Bloomberg', monospace;
+    font-size: 14px;
+}
+
+.orange {
+    color: #fb8b1e;
+}
+
+button {
+    background-color: rgb(161, 0, 14);
+    color: #FFFFFF;
+    border-width: 1px;
+}
